@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English-Only Coding Challenge Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>CodeEnglish</h1>
+    <nav>
+      <ul>
+        <li><a href="#challenges">Challenges</a></li>
+        <li><a href="#ai-chat">AI Chat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="challenges">
+      <h2>Coding Challenges</h2>
+      <div class="challenge">
+        <h3>Reverse a Linked List</h3>
+        <p>Write a function to reverse a singly linked list.</p>
+        <textarea placeholder="Write your solution in Java. Use English for comments."></textarea>
+        <button onclick="submitSolution()">Submit</button>
+      </div>
+    </section>
+
+    <section id="ai-chat">
+      <h2>AI Technical Vocabulary Assistant</h2>
+      <div class="chat-box" id="chatBox"></div>
+      <input type="text" id="chatInput" placeholder="Ask about technical terms..." />
+      <button onclick="sendMessage()">Send</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CodeEnglish. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
