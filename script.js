@@ -1,39 +1,42 @@
-// File: CodeEnglishApplication.java
-package com.codeenglish;
+// script.js
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class CodeEnglishApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(CodeEnglishApplication.class, args);
-    }
+// Open challenge function
+function openChallenge(challengeName) {
+  alert(`Opening challenge: ${challengeName}`);
 }
 
-// File: ChallengeController.java
-package com.codeenglish.controller;
+// Submit solution function
+document.getElementById("submitSolution").addEventListener("click", function () {
+  const code = document.getElementById("codeArea").value;
+  const explanation = document.getElementById("explanation").value;
+  if (code.trim() === "" || explanation.trim() === "") {
+    alert("Please provide both code and explanation.");
+  } else {
+    alert("Solution submitted successfully!");
+  }
+});
 
-import org.springframework.web.bind.annotation.*;
-import java.util.*;
+// Chat functionality
+function sendChat() {
+  const chatInput = document.getElementById("chatInput").value;
+  if (chatInput.trim() === "") {
+    alert("Please enter a question!");
+    return;
+  }
 
-@RestController
-@RequestMapping("/api")
-public class ChallengeController {
+  const chatWindow = document.getElementById("chatWindow");
+  const userMessage = document.createElement("div");
+  userMessage.classList.add("user-message");
+  userMessage.textContent = `You: ${chatInput}`;
+  chatWindow.appendChild(userMessage);
 
-    @PostMapping("/submit")
-    public Map<String, String> submitSolution(@RequestBody Map<String, String> payload) {
-        String code = payload.get("code");
-        String feedback = "Thank you! Your submission has been received.";
-        // Here you can integrate code evaluation logic or AI feedback
-        return Map.of("message", feedback);
-    }
+  // Simulate AI response
+  setTimeout(() => {
+    const aiMessage = document.createElement("div");
+    aiMessage.classList.add("ai-message");
+    aiMessage.textContent = `AI: Here's an explanation for your query about "${chatInput}". (AI response simulation)`;
+    chatWindow.appendChild(aiMessage);
+  }, 1000);
 
-    @PostMapping("/chat")
-    public Map<String, String> chatWithAI(@RequestBody Map<String, String> payload) {
-        String question = payload.get("question");
-        // Placeholder for AI integration
-        String answer = "'Polymorphism' means an object can take many forms.";
-        return Map.of("answer", answer);
-    }
+  document.getElementById("chatInput").value = "";
 }
