@@ -3,43 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>English-Only Coding Challenge Platform</title>
+  <title>CodeMaster - English-Only Coding Challenge</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1>CodeEnglish</h1>
+    <h1>CodeMaster (EN-Only)</h1>
     <nav>
       <ul>
         <li><a href="#challenges">Challenges</a></li>
-        <li><a href="#ai-chat">AI Chat</a></li>
+        <li><a href="#practice">Practice</a></li>
+        <li><a href="#chat">AI Chat</a></li>
+        <li><a href="#profile">Profile</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <section id="intro">
+      <h2>Welcome to CodeMaster</h2>
+      <p>All problems and solutions must be in English, just like real tech interviews.</p>
+    </section>
+
     <section id="challenges">
-      <h2>Coding Challenges</h2>
-      <div class="challenge">
-        <h3>Reverse a Linked List</h3>
-        <p>Write a function to reverse a singly linked list.</p>
-        <textarea placeholder="Write your solution in Java. Use English for comments."></textarea>
-        <button onclick="submitSolution()">Submit</button>
+      <h2>Challenges</h2>
+      <div class="challenge-list">
+        <article class="challenge">
+          <h3>Two Sum</h3>
+          <p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+          <button onclick="openChallenge('twoSum')">Start</button>
+        </article>
+        <!-- More challenges can be added dynamically -->
       </div>
     </section>
 
-    <section id="ai-chat">
-      <h2>AI Technical Vocabulary Assistant</h2>
-      <div class="chat-box" id="chatBox"></div>
-      <input type="text" id="chatInput" placeholder="Ask about technical terms..." />
-      <button onclick="sendMessage()">Send</button>
+    <section id="editor">
+      <h2>Code Editor</h2>
+      <textarea id="codeArea" placeholder="Write your solution here, in English comments only..."></textarea>
+      <div>
+        <label for="explanation">Explain your solution:</label>
+        <textarea id="explanation" placeholder="Write your explanation in English..."></textarea>
+      </div>
+      <button id="submitSolution">Submit</button>
+    </section>
+
+    <section id="chat">
+      <h2>AI Chat - Vocabulary Assistant</h2>
+      <div id="chatWindow"></div>
+      <input type="text" id="chatInput" placeholder="Ask about technical vocabulary..." />
+      <button onclick="sendChat()">Send</button>
+    </section>
+
+    <section id="profile">
+      <h2>Your Profile</h2>
+      <p><strong>Username:</strong> coder123</p>
+      <p><strong>Challenges Solved:</strong> 5</p>
+      <p><strong>Daily Streak:</strong> 3 days</p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 CodeEnglish. All rights reserved.</p>
+    <p>&copy; 2025 CodeMaster. All challenges in English.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
